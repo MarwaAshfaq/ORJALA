@@ -1235,7 +1235,7 @@ if st.session_state.analysis_results:
 
     # AI-Powered Rewritten Version
     if abs(results['final_score']) > 15:
-        st.markdown("### AI-Improved Version")
+        st.markdown("### Improved Version")
         
         st.markdown("""
         <div style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid #059669; border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0;">
