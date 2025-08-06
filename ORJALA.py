@@ -1280,7 +1280,7 @@ if st.session_state.analysis_results:
             """, unsafe_allow_html=True)
         
         with col2:
-            st.markdown("#### AI-Improved Version")
+            st.markdown("#### Improved Version")
             st.markdown(f"""
             <div style="background: #f0fdf4; border: 2px solid #059669; border-radius: 12px; padding: 1.5rem;">
                 <div style="background: #059669; color: white; padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center; font-size: 0.9rem;">
