@@ -336,7 +336,7 @@ def load_industry_benchmarks():
 @st.cache_data
 def load_analysis_components():
     """Load validated word lists and analysis components"""
-    # DRAMATICALLY ENHANCED masculine words (100+ words)
+    # ENHANCED masculine words (100+ words)
     masculine_words = [
         # Core Professional Terms (Masculine-coded)
         'competitive', 'aggressive', 'dominant', 'driven', 'ambitious', 'decisive', 
@@ -379,7 +379,7 @@ def load_analysis_components():
         'visionary', 'forward-thinking', 'progressive', 'dynamic', 'agile'
     ]
     
-    # DRAMATICALLY ENHANCED feminine words (80+ words)
+    # ENHANCED feminine words (80+ words)
     feminine_words = [
         # Core Collaborative Terms
         'collaborative', 'supportive', 'nurturing', 'empathetic', 'caring',
@@ -411,7 +411,7 @@ def load_analysis_components():
         'give', 'offer', 'share', 'contribute', 'participate'
     ]
     
-    # MASSIVELY ENHANCED bias patterns (200+ patterns)
+    # ENHANCED bias patterns (200+ patterns)
     bias_patterns = {
         # Competitive & Aggressive Patterns (Masculine +15 to +35)
         'competitive environment': 25, 'fast-paced environment': 20, 'challenging role': 15,
@@ -773,7 +773,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
     improved_text = text
     changes_made = []
     
-    # MASSIVELY ENHANCED phrase-level replacements (80+ phrases)
+    # ENHANCED phrase-level replacements (80+ phrases)
     phrase_replacements = {
         # Environment & Culture Phrases
         'fast-paced environment': 'dynamic work environment',
