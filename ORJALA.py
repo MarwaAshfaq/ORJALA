@@ -367,7 +367,7 @@ def load_analysis_components():
         'fire', 'blast', 'explosive', 'powerful', 'forceful', 'intense',
         
         # OR-Specific Masculine Terms
-        'optimize', 'maximize', 'algorithm', 'data-driven', 'quantitative',
+        'optimise', 'maximise', 'algorithm', 'data-driven', 'quantitative',
         'analytical', 'systematic', 'methodical', 'rigorous', 'precise',
         'exact', 'accurate', 'efficient', 'effective', 'productive',
         'streamlined', 'automated', 'scalable', 'robust', 'sophisticated',
@@ -393,7 +393,7 @@ def load_analysis_components():
         
         # Relationship & Communication Terms
         'connect', 'bond', 'relate', 'communicate', 'listen', 'hear',
-        'understand', 'empathize', 'sympathize', 'comfort', 'console',
+        'understand', 'empathise', 'sympathise', 'comfort', 'console',
         'encourage', 'inspire', 'motivate', 'uplift', 'support',
         'guide', 'mentor', 'coach', 'teach', 'educate', 'train',
         'develop', 'grow', 'nurture', 'foster', 'cultivate',
@@ -452,7 +452,7 @@ def load_analysis_components():
         'revolutionary approach': 22, 'disruptive innovation': 25, 'paradigm shift': 23,
         'breakthrough results': 21, 'cutting-edge solution': 20, 'state-of-the-art': 19,
         'next-generation': 18, 'future-proof': 17, 'industry-leading': 20,
-        'best-in-breed': 19, 'world-renowned': 18, 'globally recognized': 17,
+        'best-in-breed': 19, 'world-renowned': 18, 'globally recognised': 17,
         'internationally acclaimed': 18, 'award-winning': 16, 'celebrated': 15,
         
         # Individual Focus (Masculine +15 to +25)
@@ -472,9 +472,9 @@ def load_analysis_components():
         'olympics': 19, 'marathon': 17, 'sprint': 19, 'race to finish': 21,
         
         # Technical Masculine Terms (OR-specific +12 to +20)
-        'algorithm optimization': 18, 'data mining': 15, 'machine learning': 12,
+        'algorithm optimisation': 18, 'data mining': 15, 'machine learning': 12,
         'artificial intelligence': 14, 'big data': 13, 'analytics engine': 16,
-        'optimization model': 17, 'computational power': 19, 'processing speed': 18,
+        'optimisation model': 17, 'computational power': 19, 'processing speed': 18,
         'system architecture': 16, 'database performance': 17, 'code efficiency': 18,
         'technical mastery': 20, 'engineering excellence': 19, 'systematic approach': 15,
         
@@ -535,11 +535,11 @@ def load_analysis_components():
         'skill building': -13, 'knowledge sharing': -15, 'learning opportunities': -14,
         'training programs': -13, 'development path': -12, 'growth mindset': -14,
         'continuous learning': -15, 'lifelong education': -14, 'skill enhancement': -13,
-        'capability building': -14, 'talent development': -15, 'potential realization': -14,
+        'capability building': -14, 'talent development': -15, 'potential realisation': -14,
         
         # === NEUTRAL PATTERNS (0 to ±5) ===
         'professional environment': 0, 'business focus': 0, 'corporate culture': 0,
-        'organizational goals': 0, 'company objectives': 0, 'strategic planning': 2,
+        'organisational goals': 0, 'company objectives': 0, 'strategic planning': 2,
         'operational excellence': 1, 'quality assurance': 0, 'process improvement': 1,
         'continuous improvement': 0, 'best practices': 1, 'industry standards': 0,
         'regulatory compliance': 0, 'policy adherence': 0, 'procedure following': 0
@@ -553,7 +553,7 @@ def load_ai_research_findings():
     """Load pre-computed AI analysis results from research dataset"""
     ai_findings = {
         'dataset_stats': {
-            'total_analyzed': 308,
+            'total_analysed': 308,
             'total_cost': 5.03,
             'cost_per_analysis': 0.016,
             'coverage_percentage': 25.0
@@ -851,7 +851,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'touch base': 'connect',
         'ping me': 'contact me',
         'loop in': 'include',
-        'dive deep': 'analyze thoroughly',
+        'dive deep': 'analyse thoroughly',
         'drill down': 'examine in detail',
         'bottom line': 'key result',
         'net-net': 'overall result',
@@ -862,7 +862,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'analytics ninja': 'analytics professional',
         'data wizard': 'data specialist',
         'algorithm guru': 'algorithm expert',
-        'optimization master': 'optimization specialist',
+        'optimisation master': 'optimisation specialist',
         'machine learning rockstar': 'machine learning expert',
         'AI superhero': 'AI specialist',
         'coding warrior': 'skilled developer',
@@ -885,7 +885,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'lock and load': 'prepare for action'
     }
     
-    # MASSIVELY ENHANCED word-level replacements (120+ words)
+    # ENHANCED word-level replacements (120+ words)
     word_replacements = {
         # Core Professional Terms
         'competitive': 'results-focused', 'aggressive': 'proactive', 'dominate': 'excel in',
@@ -901,7 +901,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'supervise': 'coordinate', 'direct': 'guide', 'boss': 'lead', 'chief': 'lead',
         'master': 'expert in', 'principal': 'primary', 'supreme': 'excellent',
         'ultimate': 'optimal', 'maximum': 'highest', 'premier': 'leading',
-        'elite': 'skilled', 'exclusive': 'specialized', 'top-tier': 'high-quality',
+        'elite': 'skilled', 'exclusive': 'specialised', 'top-tier': 'high-quality',
         'first-class': 'excellent', 'world-class': 'outstanding', 'best-in-class': 'leading',
         
         # Competitive Language
@@ -923,11 +923,11 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'intense': 'focused', 'hardcore': 'dedicated', 'brutal': 'intensive',
         
         # OR-Specific Terms
-        'optimize': 'improve', 'maximize': 'enhance', 'algorithm': 'systematic method',
-        'data-driven': 'data-informed', 'quantitative': 'analytical', 'systematic': 'organized',
+        'optimise': 'improve', 'maximise': 'enhance', 'algorithm': 'systematic method',
+        'data-driven': 'data-informed', 'quantitative': 'analytical', 'systematic': 'organised',
         'methodical': 'thorough', 'rigorous': 'comprehensive', 'precise': 'accurate',
         'exact': 'accurate', 'efficient': 'effective', 'productive': 'effective',
-        'streamlined': 'efficient', 'automated': 'systematized', 'scalable': 'adaptable',
+        'streamline': 'efficient', 'automate': 'systematise', 'scalable': 'adaptable',
         'robust': 'reliable', 'sophisticated': 'advanced', 'complex': 'comprehensive',
         
         # Innovation & Tech Language
@@ -971,7 +971,7 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
     for i, word in enumerate(words):
         clean_word = word.lower().strip('.,!?;:()"')
         if clean_word in word_replacements:
-            # Preserve capitalization and punctuation
+            # Preserve capitalisation and punctuation
             punctuation = ''.join(c for c in word if not c.isalnum())
             replacement = word_replacements[clean_word]
             
@@ -1024,7 +1024,7 @@ st.markdown("""
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;">
         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
             <div style="font-size: 1.8rem; font-weight: bold; color: #3730a3;">1,200+</div>
-            <div style="font-size: 0.85rem; color: #6b7280;">UK OR Jobs Analyzed</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">UK OR Jobs Analysed</div>
         </div>
         <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
             <div style="font-size: 1.8rem; font-weight: bold; color: #3730a3;">300+</div>
