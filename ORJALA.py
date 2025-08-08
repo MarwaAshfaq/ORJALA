@@ -769,12 +769,17 @@ def create_bias_gauge(score, title="Bias Score"):
     return fig
 
 def generate_improved_version(text, masculine_words, feminine_words, bias_patterns):
-    """Generate an improved version of the job advertisement - ORIGINAL VERSION"""
+    """Generate an improved version with bias-direction awareness - COMPLETE VERSION"""
+    
+    # STEP 1: Detect bias direction first
+    initial_analysis = perform_lexicon_analysis(text, masculine_words, feminine_words)
+    bias_direction = initial_analysis['score']
+    
     improved_text = text
     changes_made = []
     
-    # ENHANCED phrase-level replacements (80+ phrases)
-    phrase_replacements = {
+    # STEP 2: Your complete phrase replacements - but filtered by bias direction
+    all_phrase_replacements = {
         # Environment & Culture Phrases
         'fast-paced environment': 'dynamic work environment',
         'high-pressure environment': 'results-focused environment',
@@ -885,13 +890,13 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'lock and load': 'prepare for action'
     }
     
-    # ENHANCED word-level replacements (120+ words)
-    word_replacements = {
+    # Your complete word replacements
+    all_word_replacements = {
         # Core Professional Terms
         'competitive': 'results-focused', 'aggressive': 'proactive', 'dominate': 'excel in',
-        'driven': 'motivated', 'ambitious': 'goal-oriented',
-        'challenging': 'engaging', 'demanding': 'comprehensive',
-        'control': 'guide',
+        'driven': 'motivated', 'ambitious': 'goal-oriented', 'strong': 'effective',
+        'challenging': 'engaging', 'demanding': 'comprehensive', 'individual': 'collaborative',
+        'manage': 'coordinate', 'control': 'guide', 'lead': 'facilitate',
         'achieve': 'accomplish', 'exceed': 'surpass', 'outperform': 'excel',
         'high-pressure': 'dynamic', 'fast-paced': 'efficient', 'results-driven': 'results-oriented',
         'self-sufficient': 'independent and collaborative', 'dominant': 'leading', 'superior': 'excellent',
@@ -958,10 +963,45 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
         'pressure': 'encourage', 'push': 'motivate', 'drive': 'guide'
     }
     
-    # Process phrase-level replacements first (more context-specific)
+    # STEP 3: Filter replacements based on bias direction
+    if bias_direction > 20:  # Masculine bias - use all masculine-reducing replacements
+        phrase_replacements = all_phrase_replacements
+        word_replacements = all_word_replacements
+        
+    elif bias_direction < -20:  # Feminine bias - only fix extreme feminine terms
+        phrase_replacements = {
+            'nurturing environment': 'supportive environment',
+            'caring culture': 'supportive culture',
+            'empathetic leadership': 'understanding leadership',
+            'gentle coaching': 'supportive coaching',
+            'think outside the box': 'approach creatively',  # Keep neutral improvements
+            'analytics ninja': 'analytics professional',
+            'data wizard': 'data specialist',
+        }
+        word_replacements = {
+            'ninja': 'expert', 'guru': 'specialist', 'wizard': 'expert',
+            'rockstar': 'outstanding professional',
+        }
+        
+    else:  # Balanced (-20 to +20) - only fix clearly problematic terms
+        phrase_replacements = {
+            'think outside the box': 'approach creatively',
+            'low-hanging fruit': 'immediate opportunities',
+            'analytics ninja': 'analytics professional',
+            'data wizard': 'data specialist',
+            'algorithm guru': 'algorithm expert',
+            'machine learning rockstar': 'machine learning expert',
+            'coding warrior': 'skilled developer',
+        }
+        word_replacements = {
+            'ninja': 'expert', 'guru': 'specialist', 'wizard': 'expert',
+            'rockstar': 'outstanding professional', 'superhero': 'exceptional professional',
+        }
+    
+    # STEP 4: Apply replacements (keeping your existing logic)
+    # Process phrase-level replacements first
     for phrase, replacement in phrase_replacements.items():
         if phrase.lower() in improved_text.lower():
-            # Case-insensitive replacement while preserving original case structure
             pattern = re.compile(re.escape(phrase), re.IGNORECASE)
             improved_text = pattern.sub(replacement, improved_text)
             changes_made.append(f"'{phrase}' → '{replacement}'")
@@ -971,7 +1011,6 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
     for i, word in enumerate(words):
         clean_word = word.lower().strip('.,!?;:()"')
         if clean_word in word_replacements:
-            # Preserve capitalisation and punctuation
             punctuation = ''.join(c for c in word if not c.isalnum())
             replacement = word_replacements[clean_word]
             
@@ -982,7 +1021,6 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
             else:
                 words[i] = replacement + punctuation
             
-            # Only add to changes if not already added from phrase replacement
             change_text = f"'{clean_word}' → '{replacement}'"
             if change_text not in changes_made:
                 changes_made.append(change_text)
@@ -994,7 +1032,6 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
     changes_made = [x for x in changes_made if not (x in seen or seen.add(x))]
     
     return improved_text, changes_made
-
 # Load components
 masculine_words, feminine_words, bias_patterns = load_analysis_components()
 industry_benchmarks = load_industry_benchmarks()
