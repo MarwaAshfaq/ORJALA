@@ -889,9 +889,9 @@ def generate_improved_version(text, masculine_words, feminine_words, bias_patter
     word_replacements = {
         # Core Professional Terms
         'competitive': 'results-focused', 'aggressive': 'proactive', 'dominate': 'excel in',
-        'driven': 'motivated', 'ambitious': 'goal-oriented', 'strong': 'effective',
-        'challenging': 'engaging', 'demanding': 'comprehensive', 'individual': 'collaborative',
-        'manage': 'coordinate', 'control': 'guide', 'lead': 'facilitate',
+        'driven': 'motivated', 'ambitious': 'goal-oriented',
+        'challenging': 'engaging', 'demanding': 'comprehensive',
+        'control': 'guide',
         'achieve': 'accomplish', 'exceed': 'surpass', 'outperform': 'excel',
         'high-pressure': 'dynamic', 'fast-paced': 'efficient', 'results-driven': 'results-oriented',
         'self-sufficient': 'independent and collaborative', 'dominant': 'leading', 'superior': 'excellent',
