@@ -45,7 +45,7 @@ Developed in collaboration with the OR Society's WORAN to support gender diversi
 This tool was developed as part of an MSc dissertation project at the University of Southampton in partnership with WORAN (Women in Operational Research and Analytics Network).
 
 **Please cite as:**
-Ashfaq, M. (2025). Gendered Language Analysis Tool for OR Job Advertisements. 
+Ashfaq, M. (2025). Operational Research Job Advertisement Language Analyser. 
 University of Southampton MSc Dissertation. ERGO Ethics Approval: 105178.
 
 **For commercial use or adaptation, please contact:** ma7n24@soton.ac.uk/marwaashfaque@gmail.com
